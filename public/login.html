@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>P4C Web-2</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h2><a href="/" style="text-decoration: none; color: black;">P4C Web-2 게시판 페이지</a></h2>
+            <nav>
+                    <a href="/login">로그인</a> |
+                    <a href="#">회원가입</a>
+            </nav>
+        </header>
+        <hr>
+
+        <div class="container">
+            <div class="layout-wrapper">
+                <div class="sidebar">
+                    <h3>게시판 메뉴</h3>
+                    <ul>
+                        <li><a href="/" class="active">전체 게시판</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자유 게시판</a></li>
+                        <li><a href="#">질문 Q&A</a></li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                  <div class="signup-container">
+                        <h3>로그인</h3>
+                        <form id="login-form">
+                          <div class="form-group">
+                            아이디
+                            <input type="text" name="username" required>
+                          </div>
+                          <div class="form-group">
+                            비밀번호
+                            <input type="password" name="password" required>
+                          </div>
+                          <button type="submit" class="submit-btn">로그인</button>
+                        </form>
+                        <div class="find-user">
+                          <a href="/find_pw">아이디 찾기</a>
+                          <a href="#" style="margin-left: 15px;">회원가입</a>
+                          <a href="/find_pw">비밀번호 찾기</a>
+                        </div>
+                        <pre id="result" style="margin-top:20px; padding:12px; background:#f4f4f4; border-radius:6px; white-space:pre-wrap; display:none;"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/login.js"></script>
+    </body>
+</html>
+  
