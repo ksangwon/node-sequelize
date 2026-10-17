@@ -1,25 +1,53 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>CVE-2023-25813 테스트 페이지</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h2><a href="/" style="text-decoration: none; color: black;">CVE-2023-25813 테스트 페이지</a></h2>
+            <nav>
+                    <a href="/login.html">로그인</a> |
+                    <a href="#">회원가입</a>
+            </nav>
+        </header>
+        <hr>
 
-{% block content %}
-<div class="signup-container">
-    <h3>비밀번호 찾기</h3>
-    <form action="{{ url_for('find_pw') }}" method="POST">
-        <div class="form-group">
-            <label>아이디</label>
-            <input type="text" name="username" required placeholder="가입한 아이디">
+        <div class="container">
+            <div class="layout-wrapper">
+                <div class="sidebar">
+                    <h3>게시판 메뉴</h3>
+                    <ul>
+                        <li><a href="/" class="active">전체 게시판</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자유 게시판</a></li>
+                        <li><a href="#">질문 Q&A</a></li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                  <div class="signup-container">
+                      <h3>비밀번호 찾기</h3>
+                      <form id="find_pw">
+                          <div class="form-group">
+                              <label>아이디</label>
+                              <input type="text" name="username" required placeholder="가입한 아이디">
+                          </div>
+                          <div class="form-group">
+                              <label>이메일</label>
+                              <input type="email" name="email" required placeholder="가입 시 등록한 이메일">
+                          </div>
+                          <button type="submit" class="submit-btn">비밀번호 재설정</button>
+                          <div style="text-align: center; margin-top: 15px;">
+                              <a href="/login.html" style="font-size: 0.9em; color: #555; text-decoration: none;">로그인으로 돌아가기</a>
+                          </div>
+                      </form>
+                  </div>
+                  <pre id="result" style="margin-top:20px; padding:12px; background:#f4f4f4; border-radius:6px; white-space:pre-wrap; display:none;"></pre>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label>이름</label>
-            <input type="text" name="name" required placeholder="가입 시 등록한 이름">
-        </div>
-        <div class="form-group">
-            <label>이메일</label>
-            <input type="email" name="email" required placeholder="가입 시 등록한 이메일">
-        </div>
-        <button type="submit" class="submit-btn">비밀번호 재설정</button>
-        <div style="text-align: center; margin-top: 15px;">
-            <a href="{{ url_for('login') }}" style="font-size: 0.9em; color: #555; text-decoration: none;">로그인으로 돌아가기</a>
-        </div>
-    </form>
-</div>
-{% endblock %}
+        <script src="/js/find_pw.js"></script>
+    </body>
+</html>

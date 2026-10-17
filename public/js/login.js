@@ -15,7 +15,6 @@ form.addEventListener('submit', async (e) => {
     });
 
     const data = await res.json();
-
     resultEl.style.display = 'block';
     resultEl.textContent = JSON.stringify(data, null, 2);
   } catch (err) {
